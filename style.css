@@ -1,245 +1,558 @@
-body {
-    padding: 0px;
-    margin: 0px;
+* {
+    margin: 0;
+    padding: 0;
+    cursor: default;
+}
+
+a {
+    cursor: pointer;
 }
 
 .wrapper {
-    width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
-/*
-* Заголовок
-*/
+/*Шапка*/
 
-.header {
-    background-image: url(top.png);
-}
-
-.title {
-    display: inline-block;
-    font: 20pt tahoma;
-    margin-left: 50px;
-    margin-top: 18px;
-    color: white;
-    height: 60px;
-}
-
-span.title::first-letter {
-    background: white;
-    color: #1a6a6d;
-    padding: 2px 4px;
-    margin: 2px;
-    border-radius: 6px;
-}
-
-/*
-* Верхнее подменю
-*/
-
-.submenu {
-    position: absolute;
-    left: 10px;
-    visibility: hidden;
-    background-color: #30b6bb;
-    z-index: 1;
-    border: 2px solid #27a1a5;
-    opacity: 0;
-}
-
-.menu-item:hover > .submenu {
-    visibility: visible;
-    opacity: 1;
-    transition: 1s;
-}
-
-.submenu .menu-item {
-    display: block;
-}
-
-.submenu .menu-item:not(:last-child) {
-    border-bottom: 3px solid #27a1a5
-}
-
-.submenu .menu-item:hover > .submenu {
-    left: 180px;
-    top: -5px;
-}
-
-/*
-* Левое подменю
-*/
-.submenu-left {
-    position: absolute;
-    left: 10px;
-    visibility: hidden;
-    background-color: #ffffff;
-    z-index: 1;
-    border: 2px solid black;
-    left: 200px;
-    top: -5px;
-    opacity: 0;
-}
-
-.menu-item:hover > .submenu-left {
-    visibility: visible;
-    opacity: 1;
-    transition: 1s;
-}
-/*
-* Верхнее меню
-*/
-
-.menu-item {
+header {
+    height: 596px;
+    background-color: #87509c;
     position: relative;
-    white-space: nowrap;
+    overflow: hidden;
 }
 
-.menu-top {
-    font: 16pt arial;
-    float: right;
-    margin-right: 30px;
+.logo {
+    position: absolute;
+    left: 211px;
+    top: 57px;
+    width: 118px;
+    height: 37px;
 }
 
-.menu-top li {
-    display: inline-block;
+.logo:hover {
+    animation: heart .5s infinite;
 }
 
-.menu-top a {
-    display: inline-block;
+@keyframes heart {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.3, 1.3);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+/*Меню*/
+
+nav {
+    position: absolute;
+    top: 60px;
+    right: 195px;
+    width: 416px;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a:hover {
+    background-color: #643a79;
+    border-radius: 5px;
+    transition-duration: .5s;
+}
+
+nav a {
+    padding: 10px 17px;
+    text-decoration: none;
     color: white;
-    height: 50px;
-    padding: 20px 25px 0px;
-    width: 100%;
-}
-
-.menu-top .menu-item:hover {
-    background: #1b686b;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
 }
 
 li {
     list-style-type: none;
 }
 
-a {
-    text-decoration: none;
-    color: white;
-}
+/*Текст*/
 
-
-
-/*
-* Левое меню
-*/
-
-.sidebar-left {
-    float: left;
-    font: 16pt arial;
-    width: 220px;
-    padding: 0px;
-    margin-left: 40px;
-}
-
-.menu-left a {
-    display: inline-block;
-    color: #5e7a6f;
-    padding: 8px;
-    width: 204px;
-}
-
-
-.menu-left .menu-item:hover {
-    background-color: #dedede;
-}
-
-.main {
-    width:900px;
-    background-image: url(fon.png);
-    background-repeat: repeat-y;
-    margin-left: 260px;
-}
-
-.online {
-    background-color: #dedede;
-    padding: 5px;
-
-}
-
-.nick {
-    display: inline-block;
-    font: 16pt tahoma;
-    color: #1a6a6d;
-    padding: 3px;
-    margin-left: 10px;
-}
-
-/*
-* Аватарка
-*/
-
-.lenta-left {
-    float: left;
-}
-
-.avatar {
-    width: 280px;
-    margin: 10px;
-}
-
-.lenta-right {
-    margin-left: 300px;
-
-}
-
-.info-left {
-    width: 200px;
-    float: left;
-}
-
-.info-right {
-    color: #1a6a6d;
-    float: right;
-    margin-right: 80px;
-}
-
-p {
-    font: 14pt arial;
-}
-
-.edit-page {
-    margin-left: 20px;
-    color: #1a6a6d;
-}
-
-.top-menu {
-    display: inline-block;
-    background-color: #dedede;
-    width: 100%;
-}
-
-/*
-* Галееря
-*/
-
-
-.gallery img {
-    float: left;
-    margin: 3px;
-}
-
-/*
-* Футер
-*/
-
-
-.footer {
-    background-color: #dedede;
-    padding: 1px;
+header .text {
+    width: 906px;
+    font-family: 'Titillium Web', sans-serif;
+    color: #f7f3ea;
+    line-height: 48px;
+    font-weight: 700;
+    font-size: 42px;
+    margin: 239px auto 0;
     text-align: center;
-    margin-bottom: 120px;
+
 }
+
+/*Кнопка*/
+
+.button {
+    margin: 54px auto;
+    width: 293px;
+    height: 70px;
+    background-color: #eb7d4b;
+    border-radius: 5px;
+    margin-left: 574px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.button:hover {
+    box-shadow: 3px 3px 5px black;
+    margin: 58px auto;
+    transition-duration: .2s;
+}
+
+header a {
+    text-decoration: none;
+    font-family: 'TitilliumWeb', sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/*Первый блок*/
+
+.services {
+    background-color: #17c2a4;
+    height: 747px;
+    overflow: hidden;
+}
+
+.services .title {
+    text-transform: uppercase;
+    color: white;
+    font-family: 'TitilliumWeb', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    margin-left: 483px;
+    margin-top: 119px;
+}
+
+.line {
+    margin: 21px 0px 23px 677px;
+}
+
+.services .text {
+    color: white;
+    text-align: center;
+    font-weight: 400;
+    font-family: 'TitilliumWeb', sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.services-content {
+    display: flex;
+    justify-content: space-around;
+    margin: 85px 205px 0;
+    color: white;
+    font-family: 'TitilliumWeb', sans-serif;
+}
+
+h2 {
+    margin-bottom: 27px;
+}
+
+.services-img {
+    text-align: center;
+    margin-right: px;
+    line-height: 24px;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.services-content img {
+    height: 125px;
+    margin-bottom: 60px;
+}
+
+/*Второй блок*/
+
+.team {
+    height: 914px;
+    background-color: #e7f1f8;
+    overflow: hidden;
+}
+
+.team .name {
+    font-family: 'TitilliumWeb', sans-serif;
+    font-size: 41px;
+    line-height: 30px;
+    font-weight: 700;
+    color: #3c4761;
+    margin-top: 119px;
+    margin-left: 430px;
+}
+
+.team .text {
+    font-family: 'TitilliumWeb', sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #3c4761;
+    margin-top: 25px;
+    margin-left: 398px;
+    margin-bottom: 78px;
+}
+
+.people {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 200px;
+}
+
+.person {
+    width: 210px;
+    text-align: center;
+}
+
+.person .avatar {
+    background-color: #878787;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 41px;
+}
+
+.person .name-person  h2 {
+    font-family: 'TitilliumWeb', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #27283d;
+    margin-bottom: 15px;
+}
+
+.person .work {
+    font-weight: 400;
+    color: #30bae7;
+    margin-bottom: 26px;
+}
+
+.text-person {
+    font-family: 'TitilliumWeb', sans-serif;
+    color: #3c4761;
+    font-weight: 300;
+    line-height: 24px;
+    font-size: 16px;
+}
+
+.socnet {
+    margin-top: 29px;
+    display: flex;
+    justify-content: center;
+}
+
+.socnet a {
+    height: 32px;
+    width: 32px;
+    display: inline-block;
+    margin-right: 12px;
+}
+.socnet img:hover {
+    cursor: pointer;
+}
+
+/*Третий блок*/
+
+.skills {
+    height: 655px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.skills .name {
+    font-family: 'TitilliumWeb', sans-serif;
+    font-size: 40px;
+    line-height: 29px;
+    font-weight: 700;
+    color: #3c4761;
+    margin-top: 117px;
+    margin-left: 557px;
+}
+
+.skills .text {
+    font-family: 'TitilliumWeb', sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #3c4761;
+    text-align: center;
+}
+
+.statistic {
+    display: flex;
+    justify-content: space-around;
+    margin: 84px 200px 0 200px;
+}
+
+.stat-name h2 {
+    font-family: 'TitilliumWeb', sans-serif;
+    color: #3c4761;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.stat-img {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    font-family: 'TitilliumWeb', sans-serif;
+    font-size: 40px;
+}
+
+.blue {
+    background: url(img/blue.png);
+}
+
+.pink {
+    background: url(img/pink.png);
+}
+
+.green {
+    background: url(img/green.png);
+}
+
+.orange {
+    background: url(img/orange.png);
+}
+
+/*Четвертый блок*/
+
+.portfolios {
+    height: 1423px;
+    background-color: #ffdd99;
+}
+
+.zagovolok {
+    font-family: TitilliumWeb;
+    font-size: 40px;
+    line-height: 29px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #393939;
+    text-align: center;
+}
+
+.text1 {
+    font-family: TitilliumWeb;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: #393939;
+    text-align: center;
+}
+
+hr {
+    width: 87px;
+    height: 4px;
+    background-color: #e5c37f;
+    margin-left: 600px;
+
+}
+
+.bloc-img {
+    width: 84px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 200;
+    font-family: 'TitilliumWeb', sans-serif;
+    font-size: 20px;
+}
+
+.bloc-img1 {
+    width: 84px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 200;
+    font-family: 'TitilliumWeb', sans-serif;
+    font-size: 20px;
+    float: left;
+}
+
+.bloc-img2 {
+    width: 84px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 200;
+    font-family: 'TitilliumWeb', sans-serif;
+    font-size: 20px;
+    float: right;
+}
+
+.bloc-img3 {
+    width: 84px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 200;
+    font-family: 'TitilliumWeb', sans-serif;
+    font-size: 20px;
+}
+
+.bloc-img4 {
+    width: 84px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 200;
+    font-family: 'TitilliumWeb', sans-serif;
+    font-size: 20px;
+}
+
+.bloc {
+    background: url(img/bloc.png);
+}
+
+.bloc1 {
+    background: url(img/bloc1.png);
+}
+
+.bloc2 {
+    background: url(img/bloc2.png);
+}
+
+.bloc3 {
+    background: url(img/bloc3.png);
+}
+
+.stat-noyt {
+    font-family: 'TitilliumWeb', sans-serif;
+    color: #3c4761;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 100px;
+    float: left;
+    background: url(img/layers.png);
+}
+
+.stat-noyt1 {
+    font-family: 'TitilliumWeb', sans-serif;
+    color: #3c4761;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 30px;
+    margin-right: 100px;
+    float: right;
+    background: url(img/bloc3.png);
+}
+
+.stat-noyt1 {
+    font-family: 'TitilliumWeb', sans-serif;
+    color: #3c4761;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 30px;
+    margin-right: 100px;
+    float: right;
+}
+
+.stat-noyt2 {
+    font-family: 'TitilliumWeb', sans-serif;
+    color: #3c4761;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 30px;
+    margin-right: 100px;
+    float: right;
+}
+
+.stat-noyt1 {
+    font-family: 'TitilliumWeb', sans-serif;
+    color: #3c4761;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 30px;
+    margin-right: 100px;
+    float: right;
+}
+
+.stat-noyt3 {
+    font-family: 'TitilliumWeb', sans-serif;
+    color: #3c4761;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 30px;
+    margin-right: 100px;
+    float: right;
+}
+
+.bloc4 {
+    font-family: 'TitilliumWeb', sans-serif;
+    color: #3c4761;
+    font-weight: 700;
+    text-align: center;
+    margin-left: 500px;
+    background: url(img/layers4.png);
+    width: 293px;
+    height: 70px;
+}
+
+.stat-text h2 {
+    font-family: 'TitilliumWeb', sans-serif;
+    color: #3c4761;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+/*Пятый блок*/
+
+.about {
+    height: 894px;
+    background-color: #d74680;
+}
+
+/*Шестой блок*/
+
+.get-touch {
+    height: 819px;
+    background-color: #3c5499;
+}
+
+/*Футер*/
+
+footer {
+    height: 112px;
+    background-color: #344b8e;
+}
+
+
+
+
+
+
+
+
+
+
+
